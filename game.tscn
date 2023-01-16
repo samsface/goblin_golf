@@ -177,7 +177,7 @@ z_index = 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="player"]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="sword" type="Sprite" parent="player"]
@@ -197,7 +197,7 @@ zoom = Vector2( 0.25, 0.25 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="goblin"]
 frames = SubResource( 3 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goblin"]
@@ -219,5 +219,19 @@ tile_data = PoolIntArray( 458755, 0, 65538, 458756, 0, 65538, 458757, 0, 65538, 
 
 [node name="applause" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 120, 68 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Label" type="RichTextLabel" parent="Node2D"]
+margin_left = 22.0
+margin_top = 28.0
+margin_right = 172.0
+margin_bottom = 42.0
+bbcode_enabled = true
+bbcode_text = "[shake]Hold [Space] to swing![/shake]"
+text = "Hold [Space] to swing!"
+scroll_active = false
 
 [connection signal="body_entered" from="hole" to="." method="_on_hole_entered"]
